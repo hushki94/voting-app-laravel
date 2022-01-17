@@ -23,7 +23,7 @@
 
 <body class="font-sans text-gray-900 bg-gray-background text-sm">
     <header class="flex items-center justify-between py-4 px-8">
-        <a href="#"><img src="{{ asset('/img/logo.svg') }}" alt=""></a>
+        <a href="/"><img src="{{ asset('/img/logo.svg') }}" alt=""></a>
         <div class="flex items-center">
             @if (Route::has('login'))
                 <div class="px-6 py-4 ">

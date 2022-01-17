@@ -2,6 +2,8 @@
 
 namespace Tests\Feature;
 
+use App\Http\Livewire\IdeasIndex;
+use App\Http\Livewire\StatusFilter;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use App\Http\Livewire\StatusFilters;
@@ -84,7 +86,7 @@ class StatusFiltersTest extends TestCase
             'description' => 'Description for my first idea',
         ]);
 
-        Livewire::test(StatusFilters::class)
+        Livewire::test(StatusFilter::class)
             ->assertSee('All Ideas (2)')
             ->assertSee('Implemented (2)');
     }
