@@ -14,7 +14,7 @@
     <ul class="flex uppercase font-semibold border-b-4 pb-3 space-x-10">
         <li>
             <a wire:click.prevent="setStatus('Implemented')" href="{{ route('idea.index', ['status' => 'Implemented']) }}"
-                class="transition duration-150 ease-in border-b-4 pb-3.5 hover:border-blue @if ($status === 'Impelemented') border-blue text-gray-900 @endif">Impelemented
+                class="transition duration-150 ease-in border-b-4 pb-3.5 hover:border-blue @if ($status === 'Implemented') border-blue text-gray-900 @endif">Implemented
                 ({{ $statusCount['implemented'] }})</a>
         </li>
         <li>
