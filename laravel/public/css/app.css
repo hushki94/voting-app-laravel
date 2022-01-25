@@ -650,6 +650,15 @@ select {
 .bottom-0 {
   bottom: 0px;
 }
+.-top-1 {
+  top: -0.25rem;
+}
+.-right-1 {
+  right: -0.25rem;
+}
+.-right-28 {
+  right: -7rem;
+}
 .left-0 {
   left: 0px;
 }
@@ -829,6 +838,9 @@ select {
 }
 .h-full {
   height: 100%;
+}
+.max-h-128 {
+  max-height: 32rem;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -1580,6 +1592,12 @@ select {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
+.line-clamp-5 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
 [x-cloak] {
     display: none !important;
 }
@@ -1626,6 +1644,10 @@ select {
     left: -58px;
     background: #8b60ed;
     opacity: 1;
+    z-index: 1;
+}
+.is-status-update.comment-container:last-child::after {
+    left: -41px;
 }
 .is-status-update {
     border-width: 1px;
@@ -1634,10 +1656,8 @@ select {
     background-image: linear-gradient(to bottom, #ffffff, #ffffff), linear-gradient(266deg, #21c8f6 98%, #637bff -52%);
     background-origin: border-box;
     background-clip: content-box, border-box;
+    z-index: 5;
 }
-.is-status-update.comment-container:last-child::after {
-    left: -41px;
-  }
 .status-open, .status-open:before {
   --tw-bg-opacity: 1;
   background-color: rgb(229 229 229 / var(--tw-bg-opacity));

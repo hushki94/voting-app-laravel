@@ -28,14 +28,18 @@
             @if (Route::has('login'))
                 <div class="px-6 py-4 ">
                     @auth
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
+                        <div class="flex items-center space-x-4">
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
 
-                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                            this.closest('form').submit();">
-                                {{ __('Log Out') }}
-                            </a>
-                        </form>
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                    this.closest('form').submit();">
+                                    {{ __('Log out') }}
+                                </a>
+                            </form>
+
+                            <livewire:comment-notifications />
+                        </div>
                     @else
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log
                             in</a>
@@ -74,19 +78,7 @@
                     </p>
 
                 </div>
-                @auth
-
-                    <livewire:create-idea/>
-                @else
-                    <a href="{{ route('login') }}"
-                        class="inline-block justify-center w-1/2 h-11 text-xs bg-blue text-white font-semibold rounded-xl border border-blue hover:bg-blue-hover transition duration-150 ease-in px-6 py-3">
-                        Login
-                    </a>
-                    <a href="{{ route('register') }}"
-                        class="inline-block justify-center w-1/2 h-11 text-xs bg-gray-200 font-semibold rounded-xl border border-gray-200 hover:border-gray-400 transition duration-150 ease-in px-6 py-3 mt-4">
-                        Register
-                    </a>
-                @endauth
+                <livewire:create-idea />
             </div>
         </div>
 
@@ -99,11 +91,18 @@
         </div>
     </main>
     @if (session('success_message'))
-            <x-notification-success
-                :redirect="true"
-                message-to-display="{{ (session('success_message')) }}"
-            />
-        @endif
+        <x-notification-success
+        :redirect="true"
+        message-to-display="{{ session('success_message') }}"
+        />
+    @endif
+    @if (session('error_message'))
+        <x-notification-success
+        type="error"
+        :redirect="true"
+        message-to-display="{{ session('error_message') }}"
+        />
+    @endif
     <livewire:scripts />
 </body>
 
